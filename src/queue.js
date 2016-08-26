@@ -14,7 +14,7 @@ class PriorityQueue {
 	}
 
 	push(data, priority) {
-		if(this.heap.size() == this.maxSize) {
+		if(this.heap.size() >= this.maxSize) {
 			throw "Push error: overflow";
 			return;
 		} else {
@@ -25,10 +25,8 @@ class PriorityQueue {
 	shift() {
 		if(this.isEmpty()){
 			throw "ERROR SHIFT"
-			return;
-		} else {
-			return this.heap.pop();
 		}
+		return this.heap.pop();
 
 	}
 
